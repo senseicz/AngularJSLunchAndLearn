@@ -1,0 +1,26 @@
+﻿<fieldset class="fieldWrapper noBottomMargin" tabindex="0">
+
+    <strong>Phone Number<em> (optional)</em></strong>
+
+    <div id="ToInputPhone_0" class="innerFieldWrapper stack"
+         data-ng-repeat="phoneNumber in  vm.Resume.BasicUserInfo.PhoneNumbers"
+         data-ng-model="vm.Resume">
+
+        <label class="GSgd2" id="Phones[0].NumberLabel">
+            <strong class="hiddenLabel">Number</strong>
+            <input aria-labelledby="Phones[0].NumberLabel" id="Phones_0__Number" maxlength="50" name="Phones[0].Number" type="text" data-ng-model="phoneNumber.Number">
+        </label>
+        <label class="GSgd2" id="Phones[0].ContactMethodIDLabel">
+            <strong class="hiddenLabel">Contact method</strong>
+
+            <select data-ng-model="phoneNumber.PhoneNumberTypeId" data-ng-options="phone.PhoneNumberTypeId as phone.PhoneNumberTypeName for phone in vm.PhoneNumberTypes"></select>
+        </label>
+
+        <span class="GSgd2 last removeButton" data-ng-click="vm.removePhoneNumber($index)">remove</span>
+    </div>
+
+    <div class="innerFieldWrapper stack">
+        <span class="addButton" data-ng-click="vm.addNewPhoneNumber()">add new</span>
+    </div>
+
+</fieldset>

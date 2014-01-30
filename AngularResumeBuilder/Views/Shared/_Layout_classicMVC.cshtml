@@ -1,0 +1,69 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Edit Professional Overview - My Profile | Monster.com</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=10">
+    <meta name="DCS.applicationid" content="my20" />
+    <meta name="DCS.channelid" content="58" />
+    <meta name="DCS.release" content="2013.9.70.84" />
+    <meta name="SL.domain" content="login.monster.com" />
+    <meta name="SL.channelAlias" content="MONS" />
+    <meta name="WT.dcsaut" content="146402396" />
+    <meta name="DCSext.login" content="1" />
+    <meta name="WT.seg_2" content="L" />
+
+
+    <link href="http://css-seeker.newjobs.com/MONS/v3.7.5.2904/global_css.axd" rel="stylesheet" type="text/css" />
+    <link href="http://css-seeker.newjobs.com/MONS/v3.7.5.17/my20mvc_css.axd" rel="stylesheet" type="text/css" />
+    <script src="http://js-seeker.newjobs.com/MONS/v3.7.5.11/monster_js.axd" type="text/javascript"></script>
+    <script src="http://js-seeker.newjobs.com/MONS/v3.7.5.2833/global_js.axd" type="text/javascript"></script>
+    <script src="http://js-seeker.newjobs.com/MONS/v3.7.5.18/my20mvc_js.axd" type="text/javascript"></script>
+
+    <link href="http://media.newjobs.com/favicon.ico" id="favIcon" rel="shortcut icon" title="monster icon shortcut link"></link>
+
+</head>
+<body data-ng-app="resumeBuilder">
+
+    <p class="skipLinksContainer">
+        <a tabindex="-1" name="mainNav"></a>
+
+        <a class="skip" href="#skipLinkDestNavigation">Skip to Navigation</a>
+        <a id="lnkAccToSearchForm" href="#skipLinkDestSearchForm" tabindex="0" class="skip">Skip to job search form</a>
+        <a href="#skipLinkToContent" tabindex="0" class="skip">Skip to page content</a>
+        <a href="#skipLinkToMainContent" tabindex="0" class="skip">Skip to Main Content</a>
+    </p>
+
+
+    <div id="interMsgsW" style="display:none">
+        <ul id="interMsgsPar"></ul>
+    </div>
+
+    <div class="topAd">
+    </div>
+    <div id='preMainWrapper'></div>
+    <div class="defaultBgd">
+        <div id="mainWrapper" class="GS14 clearfix">
+
+            @Html.Partial("_headWrapper")
+
+            <div id="mcMain" class="GSld14Alt GSm0 fnt4">
+
+                <div id="mcMainSecondary" class="GSgd3">
+                    @Html.Partial("_navigation")
+                </div>
+
+                @RenderBody()
+
+                <div id="mcMainTertiary" class="GSgd3 last">
+                    <div role='presentation' class="cssTextAlignCenter bottomMargin">
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("_footer")
+
+        </div>
+    </div>
+</body>
+</html>

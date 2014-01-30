@@ -1,0 +1,19 @@
+﻿<div data-ng-controller="layout as vm">
+    
+    <div data-ng-show="vm.IsResumeChanged" class="resumeStatusChanged">
+        <strong>
+            Your profile information has changed.
+        </strong>
+        <input class="btn styleE" type="button" value="SAVE CHANGES"
+               data-ng-click="vm.updateResume()" />
+    </div>
+    
+    <div data-ng-show="vm.ResumeJustUpdated" class="resumeStatusUpdated">
+        <strong>
+            Your profile information has been sucessfully updated.
+        </strong>
+    </div>
+
+    <div id="mcMainPrimary" class="GSgd8" data-ng-view>
+    </div>
+</div>

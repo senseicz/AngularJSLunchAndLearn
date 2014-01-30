@@ -1,0 +1,7 @@
+﻿<p class="lead"
+   data-ng-repeat="innerObj in vm.testObject.innerObjectArray"
+   data-ng-class-even="'myEvenClass'" data-ng-class-odd="'myOddClass'"
+   data-ng-click="vm.addNewObject()">
+    [{{$index}}]
+    {{innerObj.innerObjectId}} = {{innerObj.innerObjectText}}
+</p>

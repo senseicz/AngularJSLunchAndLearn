@@ -1,0 +1,26 @@
+﻿<div id="mcMainSecondary" class="GSgd3" data-ng-controller="navigation as vm">
+
+    <div class="cUserFlair clearfix bottomMargin">
+        <a class="profilePic profilePic50w" target="_top" href="/profile/" style='float: left;'>
+            <img src="http://media.newjobs.com/ntwk/user-icon-50x50.jpg" alt="{{vm.UserName}}" title="{{vm.UserName}}" />
+        </a>
+        <div class="ntwkInfo">
+            <a href="/profile/" target="_top" class="name">
+                <strong>{{vm.Resume.BasicUserInfo.FirstName}} {{vm.Resume.BasicUserInfo.LastName}}</strong>
+            </a><br />
+            <a href="/profile/" target="_top">View My Profile</a>
+        </div>
+    </div>
+
+    <a href="#skipLinkToMainContent" class="skip">Skip to Main Content</a>
+    
+    <ul id='sideNavigation'>
+        <li data-ng-repeat="navItem in vm.navRoutes">
+            <a href="#{{navItem.url}}" title="navItem.config.Title"
+               data-ng-class="vm.isCurrent(navItem)"
+               data-ng-bind-html="navItem.config.settings.content">
+            </a>
+        </li>
+    </ul>
+
+</div>

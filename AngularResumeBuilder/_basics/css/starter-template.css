@@ -1,0 +1,35 @@
+﻿body {
+    padding-top: 50px;
+}
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+
+/*Angular basics specific*/
+.myDivider {
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
+
+.myEvenClass {
+    background: #064419;
+    color: white;
+    font-weight: bold;
+}
+
+.myOddClass {
+    background: silver;
+    color: #064419;
+    font-weight: bold;
+}
+
+/*Angular form validation*/
+ .myAngularForm input.ng-invalid.ng-dirty {
+background-color: #FA787E;
+}
+.myAngularForm input.ng-valid.ng-dirty {
+background-color: #78FA89;
+}

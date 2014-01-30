@@ -1,0 +1,211 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" data-ng-app="app">
+<head>
+    <title>Edit Professional Overview - My Profile | Monster.com</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=10" />
+    <meta name="DCS.applicationid" content="my20" />
+    <meta name="DCS.channelid" content="58" />
+    <meta name="DCS.release" content="2013.9.70.84" />
+    <meta name="SL.domain" content="login.monster.com" />
+    <meta name="SL.channelAlias" content="MONS" />
+    <meta name="WT.dcsaut" content="146402396" />
+    <meta name="DCSext.login" content="1" />
+    <meta name="WT.seg_2" content="L" />
+
+
+    <link href="http://css-seeker.newjobs.com/MONS/v3.7.5.2904/global_css.axd" rel="stylesheet" type="text/css" />
+    <link href="http://css-seeker.newjobs.com/MONS/v3.7.5.17/my20mvc_css.axd" rel="stylesheet" type="text/css" />
+    
+    <style>
+        .resumeStatusChanged {
+            padding: 10px;
+            margin: 10px;
+            background-color: #FFFFC8;
+            -ms-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .resumeStatusUpdated {
+            padding: 10px;
+            margin: 10px;
+            background-color: #b6ff00;
+            -ms-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .removeButton {
+            -moz-box-shadow: inset 0px 1px 0px 0px #f29c93;
+            -webkit-box-shadow: inset 0px 1px 0px 0px #f29c93;
+            box-shadow: inset 0px 1px 0px 0px #f29c93;
+            background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+            background: -moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+            background-color: #fe1a00;
+            -webkit-border-top-left-radius: 9px;
+            -moz-border-radius-topleft: 9px;
+            border-top-left-radius: 9px;
+            -webkit-border-top-right-radius: 9px;
+            -moz-border-radius-topright: 9px;
+            border-top-right-radius: 9px;
+            -webkit-border-bottom-right-radius: 9px;
+            -moz-border-radius-bottomright: 9px;
+            border-bottom-right-radius: 9px;
+            -webkit-border-bottom-left-radius: 9px;
+            -moz-border-radius-bottomleft: 9px;
+            border-bottom-left-radius: 9px;
+            text-indent: 0px;
+            border: 1px solid #d83526;
+            display: inline-block;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            height: 20px;
+            line-height: 20px;
+            width: 75px;
+            text-decoration: none;
+            text-align: center;
+            text-shadow: 1px 1px 0px #b23e35;
+        }
+
+            .removeButton:hover {
+                background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
+                background: -moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
+                background-color: #ce0100;
+            }
+
+            .removeButton:active {
+                position: relative;
+                top: 1px;
+            }
+        /* This button was generated using CSSButtonGenerator.com */
+
+
+        .addButton {
+            -moz-box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+            -webkit-box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+            box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+            background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #78a314), color-stop(1, #4c690e) );
+            background: -moz-linear-gradient( center top, #78a314 5%, #4c690e 100% );
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#78a314', endColorstr='#4c690e');
+            background-color: #78a314;
+            -webkit-border-top-left-radius: 8px;
+            -moz-border-radius-topleft: 8px;
+            border-top-left-radius: 8px;
+            -webkit-border-top-right-radius: 8px;
+            -moz-border-radius-topright: 8px;
+            border-top-right-radius: 8px;
+            -webkit-border-bottom-right-radius: 8px;
+            -moz-border-radius-bottomright: 8px;
+            border-bottom-right-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+            -moz-border-radius-bottomleft: 8px;
+            border-bottom-left-radius: 8px;
+            text-indent: 0;
+            border: 1px solid #7ebd13;
+            display: inline-block;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            height: 19px;
+            line-height: 19px;
+            width: 88px;
+            text-decoration: none;
+            text-align: center;
+            text-shadow: 1px 1px 0px #86ae47;
+        }
+
+            .addButton:hover {
+                background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4c690e), color-stop(1, #78a314) );
+                background: -moz-linear-gradient( center top, #4c690e 5%, #78a314 100% );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c690e', endColorstr='#78a314');
+                background-color: #4c690e;
+            }
+
+            .addButton:active {
+                position: relative;
+                top: 1px;
+            }
+        /* This button was generated using CSSButtonGenerator.com */
+
+
+
+    </style>
+
+    @*
+    <script src="http://js-seeker.newjobs.com/MONS/v3.7.5.11/monster_js.axd" type="text/javascript"></script>
+    <script src="http://js-seeker.newjobs.com/MONS/v3.7.5.2833/global_js.axd" type="text/javascript"></script>
+    <script src="http://js-seeker.newjobs.com/MONS/v3.7.5.18/my20mvc_js.axd" type="text/javascript"></script>
+    *@
+
+    <link href="http://media.newjobs.com/favicon.ico" id="favIcon" rel="shortcut icon" title="monster icon shortcut link" />
+
+</head>
+<body data-ng-app="app">
+
+    <p class="skipLinksContainer">
+        <a tabindex="-1" name="mainNav"></a>
+
+        <a class="skip" href="#skipLinkDestNavigation">Skip to Navigation</a>
+        <a id="lnkAccToSearchForm" href="#skipLinkDestSearchForm" tabindex="0" class="skip">Skip to job search form</a>
+        <a href="#skipLinkToContent" tabindex="0" class="skip">Skip to page content</a>
+        <a href="#skipLinkToMainContent" tabindex="0" class="skip">Skip to Main Content</a>
+    </p>
+
+
+    <div id="interMsgsW" style="display:none">
+        <ul id="interMsgsPar"></ul>
+    </div>
+
+    <div class="topAd">
+    </div>
+    <div id='preMainWrapper'></div>
+    <div class="defaultBgd">
+        <div id="mainWrapper" class="GS14 clearfix">
+
+            @Html.Partial("_headWrapper")
+
+            <div id="mcMain" class="GSld14Alt GSm0 fnt4">
+
+                <div id="mcMainSecondary" class="GSgd3"
+                     data-ng-include="'/ResumeBuilderApp/layout/navigation.html'">
+
+                </div>
+
+                @RenderBody()
+
+                <div id="mcMainTertiary" class="GSgd3 last">
+                    <div role='presentation' class="cssTextAlignCenter bottomMargin">
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("_footer")
+
+        </div>
+    </div>
+
+    <!-- Vendor Scripts -->
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+
+    <!-- Bootstrapping -->
+    <script src="~/ResumeBuilderApp/app.js"></script>
+    <script src="~/ResumeBuilderApp/routes.js"></script>
+    <script src="~/ResumeBuilderApp/services.js"></script>
+
+    <!-- app -->
+    <script src="~/ResumeBuilderApp/layout/layout.js"></script>
+    <script src="~/ResumeBuilderApp/layout/navigation.js"></script>
+    <script src="~/ResumeBuilderApp/ContactInfo/contactInfo.js"></script>
+    <script src="~/ResumeBuilderApp/Overview/professionalOverview.js"></script>
+
+</body>
+</html>

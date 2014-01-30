@@ -1,0 +1,494 @@
+﻿<div id="mcMainPrimary" class="GSgd8">
+    <div class="contentHeader">
+        <h1 class="fnt12">
+            <i class="iconContactInformation"></i>
+            Contact Information
+        </h1>
+    </div>
+
+
+    <form action="EditContactInformation" class="formGS" data-submitname="submitName" id="form0" method="post">
+        <input id="PrivacySettings_ShowVisibilityLocks" name="PrivacySettings.ShowVisibilityLocks" type="hidden" value="True"><input id="LayoutUrl" name="LayoutUrl" type="hidden" value="~/Views/Layouts/ProfileEdit.cshtml"><input id="ActionUrl" name="ActionUrl" type="hidden" value="EditContactInformation"><input id="ShowConnectivitySettings" name="ShowConnectivitySettings" type="hidden" value="True">    <div class="contentSection">
+            <div class="contentRow">
+                <fieldset>
+                    <label class="GSgd4 fieldWrapper" id="FirstNameLabel"><strong>First Name</strong><input aria-labelledby="FirstNameLabel" id="FirstName" maxlength="50" name="FirstName" type="text" value="Antonin"></label>
+
+                    <label class="GSgd4 noBottomMargin fieldWrapper" id="LastNameLabel"><strong>Last Name</strong><input aria-labelledby="LastNameLabel" id="LastName" maxlength="50" name="LastName" type="text" value="Jelinek"></label>
+                </fieldset>
+            </div>
+            <div class="contentRow">
+                <fieldset tabindex="0">
+                    <strong class="GSgd5 fieldWrapper">Email Address</strong>
+                    <div class="innerFieldWrapper">
+                        <div>
+                            tonda@fc-bohemians.cz
+                            <a href="/Account/EditSettings" title="Edit email">Edit</a>
+                        </div>
+                    </div>
+                    <input id="Email_Address" name="Email.Address" type="hidden" value="tonda@fc-bohemians.cz">
+                </fieldset>
+                <div class="contentRowAside">
+                    <fieldset class="GSgd3 last">
+                        <label class="fieldWrapper" id="PrivacySettings.EmailVisibileTo.SettingIdLabel">
+                            <strong>Viewable to:</strong><select aria-labelledby="PrivacySettings.EmailVisibileTo.SettingIdLabel" id="PrivacySettings_EmailVisibileTo_SettingId" name="PrivacySettings.EmailVisibileTo.SettingId">
+                                <option value="0">No One</option>
+                                <option selected="selected" value="1">1st Degree Connections</option>
+                                <option value="2">2nd Degree Connections</option>
+                                <option value="3">Everyone</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <input id="PrivacySettings_EmailVisibileTo_SectionId" name="PrivacySettings.EmailVisibileTo.SectionId" type="hidden" value="11"><input id="PrivacySettings_EmailVisibileTo_IsVisible" name="PrivacySettings.EmailVisibileTo.IsVisible" type="hidden" value="True">
+                </div>
+            </div>
+            <div class="contentRow">
+                <fieldset>
+                    <label class="GSgd4 fieldWrapper" id="Address.AddressLabel"><strong>Address<em> (optional)</em></strong><input aria-labelledby="Address.AddressLabel" id="Address_Address" name="Address.Address" type="text" value=""></label>
+                </fieldset>
+                <fieldset>
+                    <label class="GSgd4 fieldWrapper" id="Address.UserEnteredZipNameLabel"><strong>Zip code</strong><input aria-labelledby="Address.UserEnteredZipNameLabel" data-autocomplete="True" data-autocompleteid="UserEnteredZipName" data-field-to-evaluate="CountryID" data-lookup="reqpcodelocations" id="Address_UserEnteredZipName" maxlength="50" name="Address.UserEnteredZipName" placeholder="Zip code" type="text" value="10100, Prague, PRAG" autocomplete="off"></label>
+                    <input data-autocompleteid="UserEnteredZipName_TranslationId" id="Address_UserEnteredZipNameTranslationId" name="Address.UserEnteredZipNameTranslationId" type="hidden" value="10095952">
+                    <input data-autocompleteid="UserEnteredZipName_TranslationName" id="Address_UserEnteredZipNameTranslationName" name="Address.UserEnteredZipNameTranslationName" type="hidden" value="10100, Prague, PRAG">
+                </fieldset>
+                <fieldset class="cssDisplayNone" tabindex="-1">
+                    <label class="GSgd4 fieldWrapper" id="Address.UserEnteredGeoNameLabel"><strong>Location</strong><input aria-labelledby="Address.UserEnteredGeoNameLabel" data-autocomplete="True" data-autocompleteid="UserEnteredGeoName" data-field-to-evaluate="CountryID" data-lookup="reqpcodelocations" disabled="disabled" id="Address_UserEnteredGeoName" maxlength="50" name="Address.UserEnteredGeoName" placeholder="Location" type="text" value="10100, Prague, PRAG" autocomplete="off"></label>
+                    <input data-autocompleteid="UserEnteredGeoName_TranslationId" id="Address_UserEnteredGeoNameTranslationId" name="Address.UserEnteredGeoNameTranslationId" type="hidden" value="10095952">
+                    <input data-autocompleteid="UserEnteredGeoName_TranslationName" id="Address_UserEnteredGeoNameTranslationName" name="Address.UserEnteredGeoNameTranslationName" type="hidden" value="10100, Prague, PRAG">
+                </fieldset>
+                <fieldset>
+                    <label class="GSgd4  fieldWrapper" id="Address.CountryIDLabel">
+                        <strong>Country</strong><select aria-labelledby="Address.CountryIDLabel" id="Address_CountryID" name="Address.CountryID" rel="countrySelector">
+                            <option value="1">Afghanistan</option>
+                            <option value="2">Albania</option>
+                            <option value="3">Algeria</option>
+                            <option value="243">American Samoa</option>
+                            <option value="4">Andorra</option>
+                            <option value="5">Angola</option>
+                            <option value="176">Anguilla</option>
+                            <option value="177">Antarctica</option>
+                            <option value="175">Antigua and Barbuda</option>
+                            <option value="6">Argentina</option>
+                            <option value="7">Armenia</option>
+                            <option value="179">Aruba</option>
+                            <option value="8">Australia</option>
+                            <option value="9">Austria</option>
+                            <option value="10">Azerbaidjan</option>
+                            <option value="11">Bahamas</option>
+                            <option value="12">Bahrain</option>
+                            <option value="13">Bangladesh</option>
+                            <option value="14">Barbados</option>
+                            <option value="15">Belarus</option>
+                            <option value="16">Belgium</option>
+                            <option value="17">Belize</option>
+                            <option value="18">Benin</option>
+                            <option value="19">Bermuda</option>
+                            <option value="20">Bhutan</option>
+                            <option value="21">Bolivia</option>
+                            <option value="22">Bosnia-Herzegovina</option>
+                            <option value="23">Botswana</option>
+                            <option value="181">Bouvet Island</option>
+                            <option value="24">Brazil</option>
+                            <option value="201">British Indian Ocean Territory</option>
+                            <option value="180">Brunei Darussalam</option>
+                            <option value="25">Bulgaria</option>
+                            <option value="26">Burkina Faso</option>
+                            <option value="27">Burundi</option>
+                            <option value="28">Cambodia</option>
+                            <option value="29">Cameroon</option>
+                            <option value="30">Canada</option>
+                            <option value="31">Cape Verde</option>
+                            <option value="32">Cayman Islands</option>
+                            <option value="33">Central African Republic</option>
+                            <option value="34">Chad</option>
+                            <option value="35">Chile</option>
+                            <option value="36">China</option>
+                            <option value="185">Christmas Island</option>
+                            <option value="182">Cocos (Keeling) Islands</option>
+                            <option value="37">Colombia</option>
+                            <option value="204">Comoros</option>
+                            <option value="38">Congo</option>
+                            <option value="183">Cook Islands</option>
+                            <option value="39">Costa Rica</option>
+                            <option value="40">Croatia</option>
+                            <option value="184">Cuba</option>
+                            <option value="41">Cyprus</option>
+                            <option selected="selected" value="42">Czech Republic</option>
+                            <option value="172">Democratic Republic of Congo</option>
+                            <option value="43">Denmark</option>
+                            <option value="44">Djibouti</option>
+                            <option value="186">Dominica</option>
+                            <option value="187">Dominican Republic</option>
+                            <option value="233">East Timor</option>
+                            <option value="251">East Timor</option>
+                            <option value="45">Ecuador</option>
+                            <option value="46">Egypt</option>
+                            <option value="47">El Salvador</option>
+                            <option value="48">Equatorial Guinea</option>
+                            <option value="49">Eritrea</option>
+                            <option value="50">Estonia</option>
+                            <option value="51">Ethiopia</option>
+                            <option value="189">Falkland Islands</option>
+                            <option value="191">Faroe Islands</option>
+                            <option value="52">Fiji</option>
+                            <option value="53">Finland</option>
+                            <option value="228">Former USSR</option>
+                            <option value="54">France</option>
+                            <option value="55">France (European Territory)</option>
+                            <option value="193">French Guyana</option>
+                            <option value="230">French Southern Territories</option>
+                            <option value="56">Gabon</option>
+                            <option value="57">Gambia</option>
+                            <option value="58">Georgia</option>
+                            <option value="59">Germany</option>
+                            <option value="60">Ghana</option>
+                            <option value="194">Gibraltar</option>
+                            <option value="61">Greece</option>
+                            <option value="195">Greenland</option>
+                            <option value="192">Grenada</option>
+                            <option value="196">Guadeloupe (French)</option>
+                            <option value="245">Guam</option>
+                            <option value="198">Guatemala</option>
+                            <option value="63">Guinea</option>
+                            <option value="64">Guinea Bissau</option>
+                            <option value="65">Guyana</option>
+                            <option value="200">Haiti</option>
+                            <option value="199">Heard and McDonald Islands</option>
+                            <option value="66">Honduras</option>
+                            <option value="67">Hong Kong</option>
+                            <option value="68">Hungary</option>
+                            <option value="69">Iceland</option>
+                            <option value="70">India</option>
+                            <option value="71">Indonesia</option>
+                            <option value="72">Iran</option>
+                            <option value="73">Iraq</option>
+                            <option value="74">Ireland</option>
+                            <option value="75">Israel</option>
+                            <option value="76">Italy</option>
+                            <option value="77">Ivory Coast</option>
+                            <option value="202">Jamaica</option>
+                            <option value="78">Japan</option>
+                            <option value="79">Jordan</option>
+                            <option value="80">Kazakhstan</option>
+                            <option value="81">Kenya</option>
+                            <option value="203">Kiribati</option>
+                            <option value="82">Kuwait</option>
+                            <option value="83">Kyrgyzstan</option>
+                            <option value="84">Laos</option>
+                            <option value="85">Latvia</option>
+                            <option value="86">Lebanon</option>
+                            <option value="87">Lesotho</option>
+                            <option value="88">Liberia</option>
+                            <option value="89">Libya</option>
+                            <option value="90">Liechtenstein</option>
+                            <option value="91">Lithuania</option>
+                            <option value="92">Luxembourg</option>
+                            <option value="208">Macau</option>
+                            <option value="93">Macedonia</option>
+                            <option value="94">Madagascar</option>
+                            <option value="95">Malawi</option>
+                            <option value="96">Malaysia</option>
+                            <option value="97">Maldives</option>
+                            <option value="98">Mali</option>
+                            <option value="99">Malta</option>
+                            <option value="207">Marshall Islands</option>
+                            <option value="210">Martinique (French)</option>
+                            <option value="100">Mauritania</option>
+                            <option value="212">Mauritius</option>
+                            <option value="241">Mayotte</option>
+                            <option value="101">Mexico</option>
+                            <option value="190">Micronesia</option>
+                            <option value="102">Moldavia</option>
+                            <option value="103">Monaco</option>
+                            <option value="104">Mongolia</option>
+                            <option value="246">Montenegro</option>
+                            <option value="211">Montserrat</option>
+                            <option value="105">Morocco</option>
+                            <option value="106">Mozambique</option>
+                            <option value="242">Myanmar, Union of (Burma)</option>
+                            <option value="107">Namibia</option>
+                            <option value="215">Nauru</option>
+                            <option value="108">Nepal</option>
+                            <option value="109">Netherlands</option>
+                            <option value="110">Netherlands Antilles</option>
+                            <option value="216">Neutral Zone</option>
+                            <option value="213">New Caledonia (French)</option>
+                            <option value="111">New Zealand</option>
+                            <option value="112">Nicaragua</option>
+                            <option value="113">Niger</option>
+                            <option value="114">Nigeria</option>
+                            <option value="217">Niue</option>
+                            <option value="214">Norfolk Island</option>
+                            <option value="115">North Korea</option>
+                            <option value="209">Northern Mariana Islands</option>
+                            <option value="116">Norway</option>
+                            <option value="117">Oman</option>
+                            <option value="118">Pakistan</option>
+                            <option value="222">Palau</option>
+                            <option value="249">Palestinian Territory, Occupied</option>
+                            <option value="119">Panama</option>
+                            <option value="219">Papua New Guinea</option>
+                            <option value="120">Paraguay</option>
+                            <option value="121">Peru</option>
+                            <option value="122">Philippines</option>
+                            <option value="221">Pitcairn Island</option>
+                            <option value="123">Poland</option>
+                            <option value="218">Polynesia (French)</option>
+                            <option value="124">Portugal</option>
+                            <option value="248">Puerto Rico</option>
+                            <option value="126">Qatar</option>
+                            <option value="127">Reunion (French)</option>
+                            <option value="128">Romania</option>
+                            <option value="129">Russian Federation</option>
+                            <option value="130">Rwanda</option>
+                            <option value="197">S. Georgia &amp; S. Sandwich Islands</option>
+                            <option value="244">Saint Barthélemy</option>
+                            <option value="224">Saint Helena</option>
+                            <option value="205">Saint Kitts &amp; Nevis Anguilla</option>
+                            <option value="206">Saint Lucia</option>
+                            <option value="247">Saint Martin</option>
+                            <option value="220">Saint Pierre and Miquelon</option>
+                            <option value="131">Saint Tome and Principe</option>
+                            <option value="237">Saint Vincent &amp; Grenadines</option>
+                            <option value="132">Samoa</option>
+                            <option value="227">San Marino</option>
+                            <option value="133">Saudi Arabia</option>
+                            <option value="134">Senegal</option>
+                            <option value="250">Serbia</option>
+                            <option value="135">Seychelles</option>
+                            <option value="136">Sierra Leone</option>
+                            <option value="137">Singapore</option>
+                            <option value="138">Slovakia</option>
+                            <option value="139">Slovenia</option>
+                            <option value="223">Solomon Islands</option>
+                            <option value="140">Somalia</option>
+                            <option value="141">South Africa</option>
+                            <option value="142">South Korea</option>
+                            <option value="143">Spain</option>
+                            <option value="144">Sri Lanka</option>
+                            <option value="145">Sudan</option>
+                            <option value="146">Suriname</option>
+                            <option value="225">Svalbard and Jan Mayen Islands</option>
+                            <option value="147">Swaziland</option>
+                            <option value="148">Sweden</option>
+                            <option value="149">Switzerland</option>
+                            <option value="150">Syria</option>
+                            <option value="151">Tadjikistan</option>
+                            <option value="152">Taiwan</option>
+                            <option value="153">Tanzania</option>
+                            <option value="154">Thailand</option>
+                            <option value="155">Togo</option>
+                            <option value="231">Tokelau</option>
+                            <option value="232">Tonga</option>
+                            <option value="234">Trinidad and Tobago</option>
+                            <option value="156">Tunisia</option>
+                            <option value="157">Turkey</option>
+                            <option value="158">Turkmenistan</option>
+                            <option value="229">Turks and Caicos Islands</option>
+                            <option value="235">Tuvalu</option>
+                            <option value="159">Uganda</option>
+                            <option value="160">UK</option>
+                            <option value="161">Ukraine</option>
+                            <option value="162">United Arab Emirates</option>
+                            <option value="163">Uruguay</option>
+                            <option value="164">US</option>
+                            <option value="236">USA Minor Outlying Islands</option>
+                            <option value="165">Uzbekistan</option>
+                            <option value="239">Vanuatu</option>
+                            <option value="166">Vatican City</option>
+                            <option value="167">Venezuela</option>
+                            <option value="168">Vietnam</option>
+                            <option value="169">Virgin Islands (British)</option>
+                            <option value="238">Virgin Islands (USA)</option>
+                            <option value="240">Wallis and Futuna Islands</option>
+                            <option value="188">Western Sahara</option>
+                            <option value="170">Yemen</option>
+                            <option value="171">Yugoslavia</option>
+                            <option value="173">Zambia</option>
+                            <option value="174">Zimbabwe</option>
+                        </select>
+                    </label>
+                </fieldset>
+                <div class="contentRowAside">
+                    <fieldset class="GSgd3 last">
+                        <label class="fieldWrapper" id="PrivacySettings.AddressVisibleTo.SettingIdLabel">
+                            <strong>Viewable to:</strong><select aria-labelledby="PrivacySettings.AddressVisibleTo.SettingIdLabel" id="PrivacySettings_AddressVisibleTo_SettingId" name="PrivacySettings.AddressVisibleTo.SettingId">
+                                <option selected="selected" value="1">1st Degree Connections</option>
+                                <option value="2">2nd Degree Connections</option>
+                                <option value="3">Everyone</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <input id="PrivacySettings_AddressVisibleTo_SectionId" name="PrivacySettings.AddressVisibleTo.SectionId" type="hidden" value="9"><input id="PrivacySettings_AddressVisibleTo_IsVisible" name="PrivacySettings.AddressVisibleTo.IsVisible" type="hidden" value="True">
+                </div>
+
+            </div>
+            <div class="contentRow">
+                <fieldset class="fieldWrapper GSgd4 noBottomMargin" tabindex="0">
+                    <strong>Phone Number<em> (optional)</em></strong>
+                    <div id="ToInputPhone_0" class="innerFieldWrapper stack ">
+                        <label class="GSgd2" id="Phones[0].NumberLabel"><strong class="hiddenLabel">Number</strong><input aria-labelledby="Phones[0].NumberLabel" id="Phones_0__Number" maxlength="50" name="Phones[0].Number" type="text" value=""></label>
+                        <label class="GSgd2 last" id="Phones[0].ContactMethodIDLabel">
+                            <strong class="hiddenLabel">Contact method</strong><select aria-labelledby="Phones[0].ContactMethodIDLabel" id="Phones_0__ContactMethodID" name="Phones[0].ContactMethodID">
+                                <option value="6">Home</option>
+                                <option selected="selected" value="3">Mobile</option>
+                                <option value="7">Work</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div id="ToInputPhone_1" class="innerFieldWrapper stack ">
+                        <label class="GSgd2" id="Phones[1].NumberLabel"><strong class="hiddenLabel">Number</strong><input aria-labelledby="Phones[1].NumberLabel" id="Phones_1__Number" maxlength="50" name="Phones[1].Number" type="text" value=""></label>
+                        <label class="GSgd2 last" id="Phones[1].ContactMethodIDLabel">
+                            <strong class="hiddenLabel">Contact method</strong><select aria-labelledby="Phones[1].ContactMethodIDLabel" id="Phones_1__ContactMethodID" name="Phones[1].ContactMethodID">
+                                <option selected="selected" value="6">Home</option>
+                                <option value="3">Mobile</option>
+                                <option value="7">Work</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </fieldset>
+                <div class="contentRowAside">
+                    <fieldset class="GSgd3 last">
+                        <label class="fieldWrapper" id="PrivacySettings.PhoneNumberVisibileTo.SettingIdLabel">
+                            <strong>Viewable to:</strong><select aria-labelledby="PrivacySettings.PhoneNumberVisibileTo.SettingIdLabel" id="PrivacySettings_PhoneNumberVisibileTo_SettingId" name="PrivacySettings.PhoneNumberVisibileTo.SettingId">
+                                <option selected="selected" value="1">1st Degree Connections</option>
+                                <option value="2">2nd Degree Connections</option>
+                                <option value="3">Everyone</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <input id="PrivacySettings_PhoneNumberVisibileTo_SectionId" name="PrivacySettings.PhoneNumberVisibileTo.SectionId" type="hidden" value="12"><input id="PrivacySettings_PhoneNumberVisibileTo_IsVisible" name="PrivacySettings.PhoneNumberVisibileTo.IsVisible" type="hidden" value="True">
+                </div>
+            </div>
+
+            <div class="contentRow">
+                <fieldset class="GSgd4">
+                    <label class="GSgd4  fieldWrapper" id="TwitterUserNameLabel"><strong>Twitter<em> (optional)</em></strong><input aria-labelledby="TwitterUserNameLabel" id="TwitterUserName" maxlength="50" name="TwitterUserName" type="text" value=""></label>
+                </fieldset>
+                <fieldset class="fieldWrapper GSgd4 noBottomMargin" tabindex="0">
+                    <strong>IM Screen Names<em> (optional)</em></strong>
+                    <div id="ToInputIM_0" class="innerFieldWrapper stack ">
+                        <label class="GSgd2" id="InstantMessagingNames[0].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[0].UserNameLabel" id="InstantMessagingNames_0__UserName" maxlength="50" name="InstantMessagingNames[0].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[0].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[0].ClientTypeIDLabel" id="InstantMessagingNames_0__ClientTypeID" name="InstantMessagingNames[0].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_0__CssVisibility" name="InstantMessagingNames[0].CssVisibility" type="hidden" value="">
+                        <input id="InstantMessagingNames_0__ImHandleId" name="InstantMessagingNames[0].ImHandleId" type="hidden" value="">
+                    </div>
+                    <div id="ToInputIM_1" class="innerFieldWrapper stack cssDisplayNone">
+                        <label class="GSgd2" id="InstantMessagingNames[1].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[1].UserNameLabel" id="InstantMessagingNames_1__UserName" maxlength="50" name="InstantMessagingNames[1].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[1].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[1].ClientTypeIDLabel" id="InstantMessagingNames_1__ClientTypeID" name="InstantMessagingNames[1].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_1__CssVisibility" name="InstantMessagingNames[1].CssVisibility" type="hidden" value="cssDisplayNone">
+                        <input id="InstantMessagingNames_1__ImHandleId" name="InstantMessagingNames[1].ImHandleId" type="hidden" value="">
+                    </div>
+                    <div id="ToInputIM_2" class="innerFieldWrapper stack cssDisplayNone">
+                        <label class="GSgd2" id="InstantMessagingNames[2].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[2].UserNameLabel" id="InstantMessagingNames_2__UserName" maxlength="50" name="InstantMessagingNames[2].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[2].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[2].ClientTypeIDLabel" id="InstantMessagingNames_2__ClientTypeID" name="InstantMessagingNames[2].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_2__CssVisibility" name="InstantMessagingNames[2].CssVisibility" type="hidden" value="cssDisplayNone">
+                        <input id="InstantMessagingNames_2__ImHandleId" name="InstantMessagingNames[2].ImHandleId" type="hidden" value="">
+                    </div>
+                    <div id="ToInputIM_3" class="innerFieldWrapper stack cssDisplayNone">
+                        <label class="GSgd2" id="InstantMessagingNames[3].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[3].UserNameLabel" id="InstantMessagingNames_3__UserName" maxlength="50" name="InstantMessagingNames[3].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[3].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[3].ClientTypeIDLabel" id="InstantMessagingNames_3__ClientTypeID" name="InstantMessagingNames[3].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_3__CssVisibility" name="InstantMessagingNames[3].CssVisibility" type="hidden" value="cssDisplayNone">
+                        <input id="InstantMessagingNames_3__ImHandleId" name="InstantMessagingNames[3].ImHandleId" type="hidden" value="">
+                    </div>
+                    <div id="ToInputIM_4" class="innerFieldWrapper stack cssDisplayNone">
+                        <label class="GSgd2" id="InstantMessagingNames[4].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[4].UserNameLabel" id="InstantMessagingNames_4__UserName" maxlength="50" name="InstantMessagingNames[4].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[4].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[4].ClientTypeIDLabel" id="InstantMessagingNames_4__ClientTypeID" name="InstantMessagingNames[4].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_4__CssVisibility" name="InstantMessagingNames[4].CssVisibility" type="hidden" value="cssDisplayNone">
+                        <input id="InstantMessagingNames_4__ImHandleId" name="InstantMessagingNames[4].ImHandleId" type="hidden" value="">
+                    </div>
+                    <input type="hidden" id="next_IM_index" value="1">
+                    <span class="fieldsetFooter GSgd4">
+                        <a id="show_next_IM" href="#">Add another screen name</a>
+                    </span>
+                </fieldset>
+
+                <div class="contentRowAside">
+                    <fieldset class="GSgd3 last">
+                        <label class="fieldWrapper" id="PrivacySettings.IMHandleAndTwitterVisibileTo.SettingIdLabel">
+                            <strong>Viewable to:</strong><select aria-labelledby="PrivacySettings.IMHandleAndTwitterVisibileTo.SettingIdLabel" id="PrivacySettings_IMHandleAndTwitterVisibileTo_SettingId" name="PrivacySettings.IMHandleAndTwitterVisibileTo.SettingId">
+                                <option selected="selected" value="1">1st Degree Connections</option>
+                                <option value="2">2nd Degree Connections</option>
+                                <option value="3">Everyone</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <input id="PrivacySettings_IMHandleAndTwitterVisibileTo_SectionId" name="PrivacySettings.IMHandleAndTwitterVisibileTo.SectionId" type="hidden" value="10"><input id="PrivacySettings_IMHandleAndTwitterVisibileTo_IsVisible" name="PrivacySettings.IMHandleAndTwitterVisibileTo.IsVisible" type="hidden" value="True">
+                </div>
+            </div>
+
+            <div class="contentRow">
+                <fieldset>
+                    <label class="GSgd4  fieldWrapper" id="WebsiteLabel"><strong>Website<em> (optional)</em></strong><input aria-labelledby="WebsiteLabel" id="Website" maxlength="50" name="Website" placeholder="http://" type="text" value=""></label>
+                </fieldset>
+                <div class="contentRowAside">
+                    <fieldset class="GSgd3 last">
+                        <label class="fieldWrapper" id="PrivacySettings.WebSiteVisibileTo.SettingIdLabel">
+                            <strong>Viewable to:</strong><select aria-labelledby="PrivacySettings.WebSiteVisibileTo.SettingIdLabel" id="PrivacySettings_WebSiteVisibileTo_SettingId" name="PrivacySettings.WebSiteVisibileTo.SettingId">
+                                <option selected="selected" value="1">1st Degree Connections</option>
+                                <option value="2">2nd Degree Connections</option>
+                                <option value="3">Everyone</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <input id="PrivacySettings_WebSiteVisibileTo_SectionId" name="PrivacySettings.WebSiteVisibileTo.SectionId" type="hidden" value="13"><input id="PrivacySettings_WebSiteVisibileTo_IsVisible" name="PrivacySettings.WebSiteVisibileTo.IsVisible" type="hidden" value="True">
+                </div>
+            </div>
+
+            <div class="contentRow">
+                <fieldset>
+                    <label class="GSgd4 noBottomMargin" id="ContactPreferenceIdLabel">
+                        <strong>I prefer to be contacted via</strong><select aria-labelledby="ContactPreferenceIdLabel" id="ContactPreferenceId" name="ContactPreferenceId">
+                            <option value="1">Telephone</option>
+                            <option value="2">Email</option>
+                            <option value="3">Mobile Phone</option>
+                        </select>
+                    </label>
+                </fieldset>
+            </div>
+            <fieldset class="fieldWrapper noBottomMargin">
+                <input class="btn styleE" data-value="Save" style="float:left" type="submit" value="Save changes"><input id="FormWasSubmittedToken" name="FormWasSubmittedToken" type="hidden" value="True">
+            </fieldset>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,239 @@
+﻿<div data-ng-controller="contactInfo as vm">
+
+    <div class="contentHeader">
+        <h1 class="fnt12">
+            <i class="iconContactInformation"></i>
+            Contact Information
+        </h1>
+    </div>
+
+    <form action="EditContactInformation" class="formGS" data-submitname="submitName" id="form0" method="post">
+        <input id="PrivacySettings_ShowVisibilityLocks" name="PrivacySettings.ShowVisibilityLocks" type="hidden" value="True"><input id="LayoutUrl" name="LayoutUrl" type="hidden" value="~/Views/Layouts/ProfileEdit.cshtml"><input id="ActionUrl" name="ActionUrl" type="hidden" value="EditContactInformation"><input id="ShowConnectivitySettings" name="ShowConnectivitySettings" type="hidden" value="True">    <div class="contentSection">
+            <div class="contentRow">
+                <fieldset>
+                    <label class="GSgd4 fieldWrapper" id="FirstNameLabel">
+                        <strong>First Name</strong>
+                        <input aria-labelledby="FirstNameLabel" id="FirstName" maxlength="50" name="FirstName" type="text" data-ng-model="vm.Resume.BasicUserInfo.FirstName">
+
+                        <!--
+                        <input aria-labelledby="FirstNameLabel" id="FirstName" maxlength="50" name="FirstName" type="text" value="Antonin">-->
+                    </label>
+
+                    <label class="GSgd4 noBottomMargin fieldWrapper" id="LastNameLabel">
+                        <strong>Last Name</strong>
+
+                        <input aria-labelledby="LastNameLabel" id="LastName" maxlength="50" name="LastName" type="text" data-ng-model="vm.Resume.BasicUserInfo.LastName">
+                        <!--
+                        <input aria-labelledby="LastNameLabel" id="LastName" maxlength="50" name="LastName" type="text" value="Jelinek">-->
+                    </label>
+                </fieldset>
+            </div>
+            <div class="contentRow">
+                <fieldset tabindex="0">
+                    <strong class="GSgd5 fieldWrapper">Email Address</strong>
+                    <div class="innerFieldWrapper">
+                        <div>
+                            {{vm.Resume.BasicUserInfo.PrimaryEmail}}
+                            <a href="/Account/EditSettings" title="Edit email">Edit</a>
+                        </div>
+                    </div>
+                    <input id="Email_Address" name="Email.Address" type="hidden" value="tonda@fc-bohemians.cz">
+                </fieldset>
+            </div>
+
+            <!--Addresses-->
+            <div class="contentRow">
+                <div class="contentRow" data-ng-repeat="address in vm.Resume.BasicUserInfo.Addresses" data-ng-model="vm.Resume">
+
+                    <fieldset>
+                        <label class="fieldWrapper" id="Address.AddressLabel">
+                            <span class="GSgd2"><strong>Address type:</strong></span>
+
+                            <span class="GSgd2">
+                                <select data-ng-model="address.Type.AddressTypeId"
+                                        data-ng-options="addType.AddressTypeId as addType.AddressTypeName for addType in vm.AddressTypes"></select>
+                            </span>
+
+                            <span class="GSgd2 last removeButton" data-ng-click="vm.removeAddress($index)">
+                                remove
+                            </span>
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <label class="GSgd4 fieldWrapper" id="Address.AddressLabel">
+                            <strong>Street, City</strong>
+                            <input aria-labelledby="Address.AddressLabel" id="Address_Address" name="Address.Address"
+                                   data-ng-model="address.Address.Street" type="text">
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <label class="GSgd4 fieldWrapper" id="Address.UserEnteredZipNameLabel">
+                            <strong>Zip code</strong>
+                            <input aria-labelledby="Address.UserEnteredZipNameLabel" data-ng-model="address.Address.ZipCode">
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <label class="GSgd4  fieldWrapper" id="Address.CountryIDLabel">
+                            <strong>Country</strong>
+
+                            <!-- It goes like this: ng-options="VALUE as TEXT for ITEM in COLLECTION" so ng-options="widget.Id as widget.Name for widget in widgets"
+                http://stackoverflow.com/questions/13047923/working-with-ng-options-in-angular
+                -->
+                            <select ng-model="address.Address.Country.CountryId" ng-options="c.CountryId as c.CountryName for c in vm.Countries"></select>
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div class="innerFieldWrapper stack">
+                    <span class="addButton" data-ng-click="vm.addNewAddress()">add new</span>
+                </div>
+            </div>
+
+
+            <!--Phone numbers-->
+            <div class="contentRow">
+
+                <phone-numbers />
+
+            </div>
+
+            <div class="contentRow">
+                <fieldset class="GSgd4">
+                    <label class="GSgd4  fieldWrapper" id="TwitterUserNameLabel"><strong>Twitter<em> (optional)</em></strong><input aria-labelledby="TwitterUserNameLabel" id="TwitterUserName" maxlength="50" name="TwitterUserName" type="text" value=""></label>
+                </fieldset>
+                <fieldset class="fieldWrapper GSgd4 noBottomMargin" tabindex="0">
+                    <strong>IM Screen Names<em> (optional)</em></strong>
+                    <div id="ToInputIM_0" class="innerFieldWrapper stack ">
+                        <label class="GSgd2" id="InstantMessagingNames[0].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[0].UserNameLabel" id="InstantMessagingNames_0__UserName" maxlength="50" name="InstantMessagingNames[0].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[0].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[0].ClientTypeIDLabel" id="InstantMessagingNames_0__ClientTypeID" name="InstantMessagingNames[0].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_0__CssVisibility" name="InstantMessagingNames[0].CssVisibility" type="hidden" value="">
+                        <input id="InstantMessagingNames_0__ImHandleId" name="InstantMessagingNames[0].ImHandleId" type="hidden" value="">
+                    </div>
+                    <div id="ToInputIM_1" class="innerFieldWrapper stack cssDisplayNone">
+                        <label class="GSgd2" id="InstantMessagingNames[1].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[1].UserNameLabel" id="InstantMessagingNames_1__UserName" maxlength="50" name="InstantMessagingNames[1].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[1].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[1].ClientTypeIDLabel" id="InstantMessagingNames_1__ClientTypeID" name="InstantMessagingNames[1].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_1__CssVisibility" name="InstantMessagingNames[1].CssVisibility" type="hidden" value="cssDisplayNone">
+                        <input id="InstantMessagingNames_1__ImHandleId" name="InstantMessagingNames[1].ImHandleId" type="hidden" value="">
+                    </div>
+                    <div id="ToInputIM_2" class="innerFieldWrapper stack cssDisplayNone">
+                        <label class="GSgd2" id="InstantMessagingNames[2].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[2].UserNameLabel" id="InstantMessagingNames_2__UserName" maxlength="50" name="InstantMessagingNames[2].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[2].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[2].ClientTypeIDLabel" id="InstantMessagingNames_2__ClientTypeID" name="InstantMessagingNames[2].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_2__CssVisibility" name="InstantMessagingNames[2].CssVisibility" type="hidden" value="cssDisplayNone">
+                        <input id="InstantMessagingNames_2__ImHandleId" name="InstantMessagingNames[2].ImHandleId" type="hidden" value="">
+                    </div>
+                    <div id="ToInputIM_3" class="innerFieldWrapper stack cssDisplayNone">
+                        <label class="GSgd2" id="InstantMessagingNames[3].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[3].UserNameLabel" id="InstantMessagingNames_3__UserName" maxlength="50" name="InstantMessagingNames[3].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[3].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[3].ClientTypeIDLabel" id="InstantMessagingNames_3__ClientTypeID" name="InstantMessagingNames[3].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_3__CssVisibility" name="InstantMessagingNames[3].CssVisibility" type="hidden" value="cssDisplayNone">
+                        <input id="InstantMessagingNames_3__ImHandleId" name="InstantMessagingNames[3].ImHandleId" type="hidden" value="">
+                    </div>
+                    <div id="ToInputIM_4" class="innerFieldWrapper stack cssDisplayNone">
+                        <label class="GSgd2" id="InstantMessagingNames[4].UserNameLabel"><strong class="hiddenLabel">IM Username</strong><input aria-labelledby="InstantMessagingNames[4].UserNameLabel" id="InstantMessagingNames_4__UserName" maxlength="50" name="InstantMessagingNames[4].UserName" type="text" value=""></label>
+                        <label class="GSgd2 last" id="InstantMessagingNames[4].ClientTypeIDLabel">
+                            <strong class="hiddenLabel">Client Type</strong><select aria-labelledby="InstantMessagingNames[4].ClientTypeIDLabel" id="InstantMessagingNames_4__ClientTypeID" name="InstantMessagingNames[4].ClientTypeID">
+                                <option value="1">AOL</option>
+                                <option value="4">ICQ</option>
+                                <option value="3">MSN</option>
+                                <option value="5">Skype</option>
+                                <option value="2">Yahoo!</option>
+                            </select>
+                        </label>
+                        <input id="InstantMessagingNames_4__CssVisibility" name="InstantMessagingNames[4].CssVisibility" type="hidden" value="cssDisplayNone">
+                        <input id="InstantMessagingNames_4__ImHandleId" name="InstantMessagingNames[4].ImHandleId" type="hidden" value="">
+                    </div>
+                    <input type="hidden" id="next_IM_index" value="1">
+                    <span class="fieldsetFooter GSgd4">
+                        <a id="show_next_IM" href="#">Add another screen name</a>
+                    </span>
+                </fieldset>
+
+                <div class="contentRowAside">
+                    <fieldset class="GSgd3 last">
+                        <label class="fieldWrapper" id="PrivacySettings.IMHandleAndTwitterVisibileTo.SettingIdLabel">
+                            <strong>Viewable to:</strong><select aria-labelledby="PrivacySettings.IMHandleAndTwitterVisibileTo.SettingIdLabel" id="PrivacySettings_IMHandleAndTwitterVisibileTo_SettingId" name="PrivacySettings.IMHandleAndTwitterVisibileTo.SettingId">
+                                <option selected="selected" value="1">1st Degree Connections</option>
+                                <option value="2">2nd Degree Connections</option>
+                                <option value="3">Everyone</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <input id="PrivacySettings_IMHandleAndTwitterVisibileTo_SectionId" name="PrivacySettings.IMHandleAndTwitterVisibileTo.SectionId" type="hidden" value="10"><input id="PrivacySettings_IMHandleAndTwitterVisibileTo_IsVisible" name="PrivacySettings.IMHandleAndTwitterVisibileTo.IsVisible" type="hidden" value="True">
+                </div>
+            </div>
+
+            <div class="contentRow">
+                <fieldset>
+                    <label class="GSgd4  fieldWrapper" id="WebsiteLabel"><strong>Website<em> (optional)</em></strong><input aria-labelledby="WebsiteLabel" id="Website" maxlength="50" name="Website" placeholder="http://" type="text" value=""></label>
+                </fieldset>
+                <div class="contentRowAside">
+                    <fieldset class="GSgd3 last">
+                        <label class="fieldWrapper" id="PrivacySettings.WebSiteVisibileTo.SettingIdLabel">
+                            <strong>Viewable to:</strong><select aria-labelledby="PrivacySettings.WebSiteVisibileTo.SettingIdLabel" id="PrivacySettings_WebSiteVisibileTo_SettingId" name="PrivacySettings.WebSiteVisibileTo.SettingId">
+                                <option selected="selected" value="1">1st Degree Connections</option>
+                                <option value="2">2nd Degree Connections</option>
+                                <option value="3">Everyone</option>
+                            </select>
+                        </label>
+                    </fieldset>
+                    <input id="PrivacySettings_WebSiteVisibileTo_SectionId" name="PrivacySettings.WebSiteVisibileTo.SectionId" type="hidden" value="13"><input id="PrivacySettings_WebSiteVisibileTo_IsVisible" name="PrivacySettings.WebSiteVisibileTo.IsVisible" type="hidden" value="True">
+                </div>
+            </div>
+
+            <div class="contentRow">
+                <fieldset>
+                    <label class="GSgd4 noBottomMargin" id="ContactPreferenceIdLabel">
+                        <strong>I prefer to be contacted via</strong><select aria-labelledby="ContactPreferenceIdLabel" id="ContactPreferenceId" name="ContactPreferenceId">
+                            <option value="1">Telephone</option>
+                            <option value="2">Email</option>
+                            <option value="3">Mobile Phone</option>
+                        </select>
+                    </label>
+                </fieldset>
+            </div>
+            <fieldset class="fieldWrapper noBottomMargin">
+
+                <input class="btn styleE" data-value="Save" style="float:left" type="button" value="Save changes" data-ng-click="vm.updateResume()">
+
+                <!--
+                    <input class="btn styleE" data-value="Save" style="float:left" type="submit" value="Save changes">
+                                                                                                                                                                                                                                            <input id="FormWasSubmittedToken" name="FormWasSubmittedToken" type="hidden" value="True">
+                -->
+            </fieldset>
+        </div>
+    </form>
+</div>

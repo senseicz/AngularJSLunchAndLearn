@@ -1,0 +1,283 @@
+Minimum Setup:
+
+Add angular.min.js to js folder
+reference angular.min.js in html (above </body> )
+<html data-ng-app="app">
+
+Sanity check:
+{{2+2}}
+
+---------------
+Add app.js
+
+(function () {
+    'use strict';
+
+    var app = angular.module('app', [/*dependency injection goes here*/]);
+
+})();
+
+--------------
+
+Add first controller: basicController.js
+
+(function () {
+    'use strict';
+
+    var controllerId = 'basicCtrl';
+    angular.module('app').controller(controllerId, ['$scope', basicCtrl]);
+
+    function basicCtrl($scope) {
+        var vm = this;
+
+    };
+})();
+
+------------------
+
+add some html
+
+data-ng-controller="basicCtrl as vm" to <div class="container">
+
+add refernce to app.js
+add reference to basicController.js
+
+------------------
+
+add test object
+
+	vm.testObject = {
+		title: "Contact Information",
+		someDataInArray: ["Text 1", "Text 2", "Text 3"],
+		innerObject: {
+			innerObjectId: 1,
+			innerObjectText: "This is text in inner object"
+		},
+		innerObjectArray: [
+			{
+				innerObjectId: 1,
+				innerObjectText: "This is text in inner object"
+			},
+			{
+				innerObjectId: 2,
+				innerObjectText: "This is yet another text in inner object"
+			}
+		],
+		user: {
+			name: '',
+			email: '',
+			age: ''
+		}
+	};
+	
+-----------------
+
+add html
+
+<p class="lead myDivider">
+	<span data-ng-repeat="text in vm.testObject.someDataInArray">
+		{{text}}
+	</span>
+</p>
+
+<p class="lead myDivider">
+	{{vm.testObject.innerObject.innerObjectId}} = {{vm.testObject.innerObject.innerObjectText}}
+</p>
+
+----------------
+
+add js code to controller:
+
+vm.buttonClicked = function () {
+	alert("button was clicked");
+};
+
+vm.anotherButtonClicked = function (fromView) {
+	alert("Hello " + fromView);
+};
+
+
+add html:
+
+<p class="lead myDivider" data-ng-click="vm.buttonClicked()">
+	[CLICK]
+</p>
+
+<p class="lead myDivider" data-ng-click="vm.anotherButtonClicked(vm.testObject.title)">
+	[CLICK ANOTHER]
+</p>
+
+------------------ 
+
+connection between view and controller - clicking
+
+js: 
+
+vm.numberClicked = 0;
+
+vm.anotherButtonClicked = function (fromView) {
+	alert("Hello " + fromView + ' [' + vm.numberClicked + ']');
+	vm.numberClicked++;
+};
+
+html: 
+
+<p class="lead myDivider" data-ng-click="vm.anotherButtonClicked(vm.testObject.title)">
+	[CLICK ANOTHER ({{vm.numberClicked}})]
+</p>
+
+------------------------------------
+
+odd / even classes, repeater
+
+<p class="lead"
+   data-ng-repeat="innerObj in vm.testObject.innerObjectArray"
+   data-ng-class-even="'myEvenClass'" data-ng-class-odd="'myOddClass'">
+	[{{$index}}]
+	{{innerObj.innerObjectId}} = {{innerObj.innerObjectText}}
+</p>
+
+----------------------------
+Add new line (object)
+
+js:
+
+vm.addNewObject = function() {
+	vm.testObject.innerObjectArray.push(
+	{
+		innerObjectId: vm.testObject.innerObjectArray.length + 1,
+		innerObjectText: 'What do you get if you multiply six by nine?'
+	});
+
+	vm.numberClicked++;
+
+	if (vm.numberClicked % 3 == 0) {
+		vm.testObject.innerObjectArray.push(
+		{
+			innerObjectId: vm.testObject.innerObjectArray.length + 1,
+			innerObjectText: 'Answer is: 42.'
+		});
+	}
+};
+
+html:
+
+add: data-ng-click="vm.addNewObject()" to <p> with repeater
+
+-------------------------
+
+show directives:
+
+Add new html: partial.html with content:
+
+<p class="lead"
+   data-ng-repeat="innerObj in vm.testObject.innerObjectArray"
+   data-ng-class-even="'myEvenClass'" data-ng-class-odd="'myOddClass'"
+   data-ng-click="vm.addNewObject()">
+    [{{$index}}]
+    {{innerObj.innerObjectId}} = {{innerObj.innerObjectText}}
+</p>
+
+add directive module: 
+
+angular.module('app').directive('partialExample', function () {
+	return {
+		restrict: 'E',
+		templateUrl: 'partial.html'
+	};
+});
+
+add partial to html:
+
+<partial-example /> 
+
+explain camel casing replacement (aA --> a-a)
+explain restrictions: E - element, A - attribute, C - class, M - comment 
+Attribute: <div partial-example></div>
+
+--------------	
+Two way binding - remove anything we did so far, especially partial :-)
+    
+<h2>Two way binding</h2>
+<input type="text" data-ng-model="vm.testObject.title" />
+
+Talk about major ideas of Angular - working with data (model) on client, sending it back to server via ajax post, no form method="post"
+asp.net mvc helpers
+
+--------------
+
+Quick demo of form validation:
+
+html:
+
+	<form novalidate class="myAngularForm" name="form">
+		<div class="form-group">
+			<label for="inputName" class="col-sm-2 control-label">Name:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputName"
+					   data-ng-model="vm.user.name" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputEmail" class="col-sm-2 control-label">E-mail:</label>
+			<div class="col-sm-10">
+				<input type="email" class="form-control" id="inputEmail"
+					   data-ng-model="vm.user.email" required>
+			</div>
+		</div>
+
+	</form>
+
+	
+novalidate - turn off native browser validation
+required - Angular directive (attribute)
+show css classes (valid, invalid)
+input type="email" = Angular checking for proper email format
+	
+
+Add some custom validation:	
+
+this goes before </form>:
+	
+<div class="form-group">
+	<label for="inputAge" class="col-sm-2 control-label">Age:</label>
+	<div class="col-sm-10">
+		<input type="number" class="form-control" id="inputAge" name="inputAge"
+			   data-ng-model="vm.user.age" min="18" max="40" integer />
+	</div>
+	<span class="help-block" data-ng-show="form.inputAge.$error.integer">This is not valid integer!</span>
+	<span class="help-block" data-ng-show="form.inputAge.$error.min || form.size.$error.max">
+		Sorry, must be older than 18 and younger than 40. Call it age discrimination :-)
+	</span>
+</div>	
+
++ js:
+
+var INTEGER_REGEXP = /^\-?\d+$/;
+angular.module('app').directive('integer', function () {
+	return {
+		require: 'ngModel',
+		link: function (scope, elm, attrs, ctrl) {
+			ctrl.$parsers.unshift(function (viewValue) {
+				if (INTEGER_REGEXP.test(viewValue)) {
+					// it is valid
+					ctrl.$setValidity('integer', true);
+					return viewValue;
+				} else {
+					// it is invalid, return undefined (no model update)
+					ctrl.$setValidity('integer', false);
+					return undefined;
+				}
+			});
+		}
+	};
+});
+
+
+---------------------------------END BASICS
+
+   
+
+
+
